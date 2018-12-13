@@ -3489,17 +3489,6 @@ namespace OpenNos.Handler
                 team.SendPacket(UserInterfaceHelper.Instance.GenerateMsg($"Player {Session.Character.Name} needs help!", 0));
                 onlineStaff++;
             }
-
-            if (onlineStaff > 0)
-            {
-                Session.SendPacket(Session.Character.GenerateSay(
-                    $"{onlineStaff} Staff members have been informed, you should receive an answer soon!", 10));
-            }
-            else
-            {
-                Session.SendPacket(Session.Character.GenerateSay("Unfortunately, there's no member currently available to help you. You can ask them in discord, here:", 10));
-                Session.SendPacket(Session.Character.GenerateSay("https://discord.gg/2Eep6Xh", 10));
-            }
         }
 
         public void ItemRain(ItemRainPacket packet)
